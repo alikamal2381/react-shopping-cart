@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useQuery } from "react-query";
 // Components
 import Item from "./Item/Item";
@@ -23,8 +23,6 @@ export type CartItemType = {
 
 const getProducts = async (): Promise<CartItemType[]> =>
   await (await fetch("https://fakestoreapi.com/products")).json();
-
-console.log(getProducts);
 
 const App = () => {
   const [cartOpen, setCartOpen] = useState(false);
